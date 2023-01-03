@@ -1,0 +1,732 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    font-size: 62.5%;
+  
+    --bg-top: #8E9AAF;
+    --bg-down: #eff1ff;
+    --bg-banner: #cbc0d3;
+    --bg-span: #feeafa;
+  
+    --fc-texting: #23053a;
+    --fc-span: #4a4e69;
+  }
+  
+  body {
+    font-size: 1.6rem;
+  }
+  
+  .page {
+    margin: auto;
+    display: grid;
+    grid-template-areas:
+      "header"
+      "main";
+    grid-template-rows: 27.9rem auto;
+  }
+  
+  header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-top);
+  }
+  
+  header img {
+    max-width: 13.7rem;
+    height: 13.7rem;
+    margin: 3.2rem auto;
+    filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.25));
+  }
+
+  #logo-desktop {
+    display: none;
+  }
+  
+  .title {
+    width: 100%;
+    height: 4.9rem;
+    background-color: var(--bg-banner);
+    text-align: center;
+    padding: 0.8rem 8.7rem;
+    margin-bottom: 2.9rem;
+  }
+  
+  .title h1 {
+    text-transform: uppercase;
+    font-family: "Staatliches";
+    font-size: 4rem;
+    line-height: 3.4rem;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-color: var(--bg-down);
+  }
+  
+  #text-desktop {
+    display: none;
+  }
+  
+  p {
+    margin-top: 2.5rem;
+    text-align: center;
+    width: 26.5rem;
+    height: 7.5rem;
+    font-family: "Palanquin";
+    font-size: 1.6rem;
+    line-height: 1.5rem;
+    color: var(--fc-texting);
+  }
+  
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 3.6rem;
+    margin: 6.3rem auto 6rem;
+  }
+  
+  .card-clone {
+    display: none;
+  }
+  
+  .card,
+  .card-clone {
+    position: relative;
+  }
+  
+  .card img,
+  .card-clone img {
+    border-radius: 2rem;
+    animation: downtop 1s;
+  }
+  
+  .card h2,
+  .card-clone h2 {
+    position: absolute;
+    right: 1.6rem;
+    top: 1.6rem;
+    border-radius: 2rem;
+    background-color: var(--bg-span);
+    font-family: "Staatliches";
+    font-size: 2rem;
+    line-height: 3.4rem;
+    letter-spacing: 0.05em;
+    color: var(--fc-span);
+    padding: 0 2.4rem;
+    display: inline-flex;
+    height: 3.5rem;
+    width: 11.2rem;
+    align-items: center;
+    width: fit-content;
+    animation: topdown 1s;
+  }
+  
+  .footer {
+    display: none;
+  }
+  
+  /* animations */
+  
+  @keyframes topdown {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes downtop {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* desktop */
+  
+  @media (min-width: 930px) {
+    #logo-mobile{
+      display: none;
+    }
+
+    #logo-desktop {
+      display: block;
+      margin-top: 1rem;
+    }
+
+    p {
+      display: none;
+    }
+  
+    .page {
+      grid-template-columns: 37.7rem;
+      grid-template-areas:
+        "header main"
+        "header main";
+  
+      max-width: 100%;
+      height: 100vh;
+    }
+  
+    img {
+      width: 100%;
+      height: auto;
+    }
+  
+    header {
+      grid-area: header;
+      max-width: 37.7rem;
+      max-height: 100%;
+    }
+  
+    header img {
+      max-width: 21.4rem;
+      height: 16.7rem;
+      margin: 3.2rem auto;
+      filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.25));
+    }
+  
+    .title {
+      max-width: 100%;
+      height: 7rem;
+      background-color: var(--bg-banner);
+      text-align: center;
+      padding: 2.1rem 7.3rem;
+      margin-bottom: 3.2rem;
+    }
+  
+    .title h1 {
+      text-transform: uppercase;
+      font-family: "Staatliches";
+      font-size: 4rem;
+      line-height: 3.4rem;
+      letter-spacing: 0.05em;
+      color: #ffffff;
+      text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    }
+  
+    #text-desktop {
+      display: initial;
+      font-family: "Roboto";
+      font-size: 1.8rem;
+      line-height: 2rem;
+      margin-top: 0;
+      color: #ffffff;
+    }
+  
+    main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 100%;
+      margin: auto;
+      grid-area: main;
+      background-color: #ffffff;
+    }
+  
+    .card h2,
+    .card-clone h2 {
+  
+      font-size: clamp(1rem, 1rem + 0.5vw , 2rem);
+      height: clamp(3.5rem, 1rem + 5vw , 3.5rem);
+      width: clamp(11.2rem, 1rem + 5vw , 11.2rem);
+      align-items: center;
+      width: fit-content;
+    }
+  
+    .card-clone {
+      display: initial;
+    }
+    
+    .card:hover {
+      transform: scale(1.1);
+    }
+
+    .card-clone:hover {
+      transform: scale(1.1);
+    }
+  
+    .cards {
+      display: grid;
+      max-width: 100%;
+      gap: 3.2rem;
+      grid-template-areas:
+        "A B F"
+        "D B E"
+        "D C E";
+    }
+  
+    .cards div:nth-child(1) {
+      grid-area: A;
+    }
+  
+    .cards div:nth-child(2) {
+      grid-area: B;
+    }
+  
+    .cards div:nth-child(3) {
+      grid-area: C;
+    }
+  
+    .cards div:nth-child(4) {
+      grid-area: D;
+    }
+  
+    .cards div:nth-child(5) {
+      grid-area: E;
+    }
+  
+    .cards div:nth-child(6) {
+      grid-area: F;
+    }
+  
+    .footer {
+      display: initial;
+      text-align: center;
+      justify-content: center;
+      width: 59.2rem;
+      height: 2.8rem;
+      
+    }
+  
+    .footer p {
+      color: black;
+      display: initial;
+      font-family: "Open Sans", sans-serif;
+      font-size: 14px;
+      line-height: 28px;
+      text-align: center;
+      color: #4a4e69;
+    }
+  
+    .footer a {
+      font-family: "Open Sans", sans-serif;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 28px;
+      color: #4a4e69;
+      
+    }
+  }
+
+
+ /***************************************************
+ * Generated by SVG Artista on 1/3/2023, 4:08:30 PM
+ * MIT license (https://opensource.org/licenses/MIT)
+ * W. https://svgartista.net
+ **************************************************/
+
+@keyframes animate-svg-fill-1 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(255, 255, 255);
+  }
+}
+
+.svg-elem-1 {
+  animation: animate-svg-fill-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
+}
+
+@keyframes animate-svg-fill-2 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(255, 255, 255);
+  }
+}
+
+.svg-elem-2 {
+  animation: animate-svg-fill-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both;
+}
+
+@keyframes animate-svg-fill-3 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(242, 242, 242);
+  }
+}
+
+.svg-elem-3 {
+  animation: animate-svg-fill-3 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both;
+}
+
+@keyframes animate-svg-fill-4 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(255, 255, 255);
+  }
+}
+
+.svg-elem-4 {
+  animation: animate-svg-fill-4 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1s both;
+}
+
+@keyframes animate-svg-fill-5 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(228, 228, 228);
+  }
+}
+
+.svg-elem-5 {
+  animation: animate-svg-fill-5 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2000000000000002s both;
+}
+
+@keyframes animate-svg-fill-6 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(242, 242, 242);
+  }
+}
+
+.svg-elem-6 {
+  animation: animate-svg-fill-6 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.3s both;
+}
+
+@keyframes animate-svg-fill-7 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(228, 228, 228);
+  }
+}
+
+.svg-elem-7 {
+  animation: animate-svg-fill-7 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4000000000000001s both;
+}
+
+@keyframes animate-svg-fill-8 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(242, 242, 242);
+  }
+}
+
+.svg-elem-8 {
+  animation: animate-svg-fill-8 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.5s both;
+}
+
+@keyframes animate-svg-fill-9 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(242, 242, 242);
+  }
+}
+
+.svg-elem-9 {
+  animation: animate-svg-fill-9 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.6s both;
+}
+
+@keyframes animate-svg-fill-10 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(221, 190, 169);
+  }
+}
+
+.svg-elem-10 {
+  animation: animate-svg-fill-10 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.7000000000000002s both;
+}
+
+@keyframes animate-svg-fill-11 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(0, 0, 0);
+  }
+}
+
+.svg-elem-11 {
+  animation: animate-svg-fill-11 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s both;
+}
+
+@keyframes animate-svg-fill-12 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(0, 0, 0);
+  }
+}
+
+.svg-elem-12 {
+  animation: animate-svg-fill-12 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.9000000000000001s both;
+}
+
+@keyframes animate-svg-fill-13 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(222, 170, 255);
+  }
+}
+
+.svg-elem-13 {
+  animation: animate-svg-fill-13 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2s both;
+}
+
+@keyframes animate-svg-fill-14 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(222, 170, 255);
+  }
+}
+
+.svg-elem-14 {
+  animation: animate-svg-fill-14 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2.1s both;
+}
+
+@keyframes animate-svg-fill-15 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(222, 170, 255);
+  }
+}
+
+.svg-elem-15 {
+  animation: animate-svg-fill-15 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2.2s both;
+}
+
+@keyframes animate-svg-fill-16 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(0, 0, 0);
+  }
+}
+
+.svg-elem-16 {
+  animation: animate-svg-fill-16 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2.3s both;
+}
+
+@keyframes animate-svg-fill-17 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(0, 0, 0);
+  }
+}
+
+.svg-elem-17 {
+  animation: animate-svg-fill-17 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2.4000000000000004s both;
+}
+
+@keyframes animate-svg-fill-18 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(125, 26, 171);
+  }
+}
+
+.svg-elem-18 {
+  animation: animate-svg-fill-18 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2.5s both;
+}
+
+@keyframes animate-svg-fill-19 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(125, 26, 171);
+  }
+}
+
+.svg-elem-19 {
+  animation: animate-svg-fill-19 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2.6s both;
+}
+
+@keyframes animate-svg-fill-20 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(125, 26, 171);
+  }
+}
+
+.svg-elem-20 {
+  animation: animate-svg-fill-20 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2.7s both;
+}
+
+@keyframes animate-svg-fill-21 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(125, 26, 171);
+  }
+}
+
+.svg-elem-21 {
+  animation: animate-svg-fill-21 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2.8s both;
+}
+
+@keyframes animate-svg-fill-22 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(125, 26, 171);
+  }
+}
+
+.svg-elem-22 {
+  animation: animate-svg-fill-22 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2.9000000000000004s both;
+}
+
+@keyframes animate-svg-fill-23 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(125, 26, 171);
+  }
+}
+
+.svg-elem-23 {
+  animation: animate-svg-fill-23 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 3s both;
+}
+
+@keyframes animate-svg-fill-24 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(125, 26, 171);
+  }
+}
+
+.svg-elem-24 {
+  animation: animate-svg-fill-24 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 3.1000000000000005s both;
+}
+
+@keyframes animate-svg-fill-25 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(125, 26, 171);
+  }
+}
+
+.svg-elem-25 {
+  animation: animate-svg-fill-25 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 3.2s both;
+}
+
+@keyframes animate-svg-fill-26 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(125, 26, 171);
+  }
+}
+
+.svg-elem-26 {
+  animation: animate-svg-fill-26 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 3.3s both;
+}
+
+@keyframes animate-svg-fill-27 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(222, 170, 255);
+  }
+}
+
+.svg-elem-27 {
+  animation: animate-svg-fill-27 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 3.4000000000000004s both;
+}
+
+@keyframes animate-svg-fill-28 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(222, 170, 255);
+  }
+}
+
+.svg-elem-28 {
+  animation: animate-svg-fill-28 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 3.5s both;
+}
